@@ -33,11 +33,11 @@ const radar = {
     radius: 190
 }
 
-const radio = document.querySelectorAll("input[type=radio][name=mode]");
+const modeRadio = document.querySelectorAll("input[type=radio][name=mode]");
+const colorRadio = document.querySelectorAll("input[type=radio][name=color]");
 const scatterX = document.getElementById("scatterX");
 const scatterY = document.getElementById("scatterY");
 const barOrder = document.getElementById("barOrder");
-const barY = document.getElementById("barY");
 const filterBtn = document.getElementById("filterOut");
 const resetBtn = document.getElementById("reset");
 
@@ -46,7 +46,7 @@ const options = ["HP","Attack","Defense","Special Attack","Special Defense","Spe
                 "Weakness-Fighting","Weakness-Poison","Weakness-Ground","Weakness-Flying","Weakness-Psychic","Weakness-Bug",
                 "Weakness-Rock","Weakness-Ghost","Weakness-Dragon","Weakness-Dark","Weakness-Steel","Weakness-Fairy"];
 
-[scatterX, scatterY, barOrder, barY].forEach(function(selector) {
+[scatterX, scatterY, barOrder].forEach(function(selector) {
     options.forEach(function(el) {
         const option = document.createElement("option");
         option.value = el;
@@ -67,11 +67,6 @@ scatterY.addEventListener("change", function(e) {
 
 barOrder.addEventListener("change", function(e) {
     bar.order = e.target.value;
-    bar.y = e.target.value;
-    drawBar();
-});
-
-barY.addEventListener("change", function(e) {
     bar.y = e.target.value;
     drawBar();
 });
@@ -137,7 +132,7 @@ Promise.all(['data/gen9_pokemon_stats.csv', 'data/gen9_pokemon_moves.csv', 'data
     initBar();
     initRadar();
 
-    radio.forEach(function(el) {
+    modeRadio.forEach(function(el) {
         el.addEventListener("change", function(e) {
             if (e.target.value == "brush") {
                 scatterBrush = scatterPlot.append("g")
@@ -151,6 +146,15 @@ Promise.all(['data/gen9_pokemon_stats.csv', 'data/gen9_pokemon_moves.csv', 'data
                 scatterBrush.remove();
                 barBrush.remove();
             }
+        });
+    });
+
+    colorRadio.forEach(function(el) {
+        el.addEventListener("change", function(e) {
+            scatter.t = e.target.value;
+            bar.t = e.target.value;
+            drawScatter();
+            drawBar();
         });
     });
 

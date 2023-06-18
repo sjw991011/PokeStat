@@ -23,8 +23,6 @@
             <div id="barInteraction">
                 <label for="barOrder">Order by: </label>
                 <select id="barOrder"></select><br>
-                <label for="barY">Y axis: </label>
-                <select id="barY"></select>
             </div>
         </div>
         <div id="radar" style="float: left;">
@@ -35,6 +33,11 @@
     <div id="modeWrapper">
         <input type="radio" name="mode" value="brush" checked>Brush
         <input type="radio" name="mode" value="tooltip">Tooltip
+    </div>
+    <label for="colorWrapper">Color: </label>
+    <div id="colorWrapper">
+        <input type="radio" name="color" value="Type 1" checked>Type 1
+        <input type="radio" name="color" value="Type 2">Type 2
     </div>
     <button id="filterOut">Leave Only Selected</button>
     <button id="reset">Reset</button>
