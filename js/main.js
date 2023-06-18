@@ -307,7 +307,7 @@ function showScatterTooltip(e, d) {
         .style("visibility", "visible")
         .style("left", (scatter.xScale[scatter.x](d[scatter.x]) + 80) + "px")
         .style("top", (scatter.yScale[scatter.y](d[scatter.y]) + 50) + "px")
-        .html(`<img src="../img/${ nationalDexNumber[d.Pokemon] }.png" width="32px" height="32px"></img>`
+        .html(`<img src="./img/${ nationalDexNumber[d.Pokemon] }.png" width="32px" height="32px"></img>`
             + `${ d.Pokemon } (#${nationalDexNumber[d.Pokemon]})`);
 }
 
@@ -478,7 +478,7 @@ function showBarTooltip(e, d) {
         .style("visibility", "visible")
         .style("left", (bar.xScale(d.Pokemon) + 80) + "px")
         .style("top", (bar.yScale[bar.y](d[bar.y]) - 20) + "px")
-        .html(`<img src="../img/${ nationalDexNumber[d.Pokemon] }.png" width="32px" height="32px"></img>`
+        .html(`<img src="./img/${ nationalDexNumber[d.Pokemon] }.png" width="32px" height="32px"></img>`
             + `${ d.Pokemon } (#${nationalDexNumber[d.Pokemon]})`);
 }
 
