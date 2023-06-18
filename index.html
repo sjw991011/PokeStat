@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>PokéStat</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>PokéStat: Interactive Pokemon Stats Visualization</h1>
+    <script src="js/d3.v7.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <div id="wrapper">
+        <div id="scatter" style="float: left;">
+            <div id="scatterPlot" style="position: relative;"></div>
+            <div id="scatterInteraction">
+                <label for="scatterX">X axis: </label>
+                <select id="scatterX"></select><br>
+                <label for="scatterY">Y axis: </label>
+                <select id="scatterY"></select>
+            </div>
+        </div>
+        <div id="bar" style="float: left;">
+            <div id="barPlot" style="position: relative;"></div>
+            <div id="barInteraction">
+                <label for="barOrder">Order by: </label>
+                <select id="barOrder"></select><br>
+                <label for="barY">Y axis: </label>
+                <select id="barY"></select>
+            </div>
+        </div>
+        <div id="radar" style="float: left;">
+            <div id="radarPlot" style="position: relative"></div>
+        </div>
+    </div>
+    <label for="modeWrapper">Mode: </label>
+    <div id="modeWrapper">
+        <input type="radio" name="mode" value="brush" checked>Brush
+        <input type="radio" name="mode" value="tooltip">Tooltip
+    </div>
+    <button id="filterOut">Leave Only Selected</button>
+    <button id="reset">Reset</button>
+</body>

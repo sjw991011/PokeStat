@@ -1,0 +1,12 @@
+.selected {
+    opacity: 0.8 !important;
+    stroke: black;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 5px;
+}
